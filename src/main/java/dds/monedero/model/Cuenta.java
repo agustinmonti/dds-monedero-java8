@@ -30,7 +30,7 @@ public class Cuenta {
     esMontoPositivo(cuanto);
     puedoDepositar();
 
-    new Movimiento(LocalDate.now(), cuanto, true).agregateA(this);
+    new Deposito(LocalDate.now(), cuanto).agregateA(this);
   }
 
   private void puedoDepositar() {
@@ -43,7 +43,7 @@ public class Cuenta {
     esMontoPositivo(cuanto);
     montoMenorAlSaldo(cuanto);
     puedoExtraerMonto(cuanto);
-    new Movimiento(LocalDate.now(), cuanto, false).agregateA(this);
+    new Extraccion(LocalDate.now(), cuanto).agregateA(this);
   }
 
   private void puedoExtraerMonto(double cuanto) {
